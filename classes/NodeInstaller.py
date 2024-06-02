@@ -1,15 +1,15 @@
 # Copyright 2024 Daxton Caylor
-# 
+#
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
 # to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
-# 
+#
 # The above copyright notice and this permission notice shall be included in all
 # copies or substantial portions of the Software.
-# 
+#
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -19,11 +19,13 @@
 # SOFTWARE.
 
 import os
+import json
 import requests
 import subprocess
 import tempfile
 from tqdm import tqdm
 import shutil
+
 
 class NodeInstaller:
 
@@ -59,17 +61,18 @@ class NodeInstaller:
             return
         process = subprocess.Popen([self.installer_path], shell=True)
         process.wait()
-        
+
     def install_all_packages(self, package_list):
         for package_name in package_list:
             self.install_npm_package(package_name)
 
     def install_npm_package(self, package_name):
         install_command = f"npm install {package_name}"
-        
+
         try:
             print("")
-            process = subprocess.Popen(install_command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
+            process = subprocess.Popen(
+                install_command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
             for line in tqdm(iter(process.stdout.readline, b''), desc=f"Installing {package_name}", unit='B', unit_scale=True, leave=False):
                 pass
             process.stdout.close()
@@ -78,3 +81,27 @@ class NodeInstaller:
         except subprocess.CalledProcessError as e:
             print(f"An error occurred: {e}")
 
+    def get_dependencies_and_production_scripts(self, directory_path):
+        folders_with_info = {}
+        try:
+            entries = os.listdir(directory_path)
+            folders = [entry for entry in entries if os.path.isdir(
+                os.path.join(directory_path, entry))]
+            for folder in folders:
+                folder_path = os.path.join(directory_path, folder)
+                package_json_path = os.path.join(folder_path, 'package.json')
+                if os.path.exists(package_json_path):
+                    with open(package_json_path, 'r') as json_file:
+                        data = json.load(json_file)
+                        dependencies = data.get('dependencies', {})
+                        production_script = data.get('scripts', {}).get('production', None)
+                        folders_with_info[folder] = {'dependencies': dependencies, 'production': production_script}
+                else:
+                    folders_with_info[folder] = {'dependencies': None, 'production': None}
+            return folders_with_info
+        except FileNotFoundError:
+            return f"The directory {directory_path} does not exist."
+        except PermissionError:
+            return f"Permission denied to access the directory {directory_path}."
+        except Exception as e:
+            return f"An error occurred: {e}"
