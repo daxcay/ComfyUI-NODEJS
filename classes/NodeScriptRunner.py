@@ -46,7 +46,7 @@ class NodeScriptRunner:
         while self.should_run:
             for i, (process, cwd, script) in enumerate(self.processes):
                 if process.poll() is not None:  # Check if the process has terminated
-                    print(f"Project script '{script}' in '{cwd}' terminated unexpectedly. Restarting...")
+                    print(f"Project script '{script}' in '{cwd}' terminated unexpectedly.")
                     new_process = self.start_script(cwd, script)
                     self.processes[i] = (new_process, cwd, script)
             time.sleep(1)  # Check every second
@@ -60,8 +60,8 @@ class NodeScriptRunner:
             for cwd, script in self.scripts:
                 self.start_script(cwd, script)
             
-            monitor_thread = threading.Thread(target=self.monitor_scripts)
-            monitor_thread.start()
+            # monitor_thread = threading.Thread(target=self.monitor_scripts)
+            # monitor_thread.start()
         except FileNotFoundError:
             print("Node.js is not installed or not found in the system path.")
         except Exception as e:

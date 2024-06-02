@@ -1,10 +1,10 @@
 console.log("NodeJS: Script is working!")
 const express = require('express')
 const app = express()
-const port = 3002
+const port = 3000
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send('i love you 3000!')
 })
 
 app.listen(port, () => {
