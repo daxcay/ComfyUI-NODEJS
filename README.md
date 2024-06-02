@@ -13,6 +13,12 @@ This node allows the execution of Node.js scripts within ComfyUI by leveraging t
 
 ## Configuration
 
-To 
+### For someone who already has a project
+
+
+
+### For someone who is a developer
+
+To run a nodejs project you will need to do 
 
 ### folder
