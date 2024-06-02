@@ -19,7 +19,7 @@ This node allows the execution of Node.js application within ComfyUI by leveragi
 
 **Windows users can skip this section**
 
-For any query you can join my discord server: https://discord.gg/sf3kVbtJ
+For any query you can join my discord server: https://discord.gg/Z44Zjpurjp
 
 ## Node Installation:
 
@@ -96,7 +96,7 @@ Open any browser and head to ```http://localhost:3000```. If NodeJs is installed
 ◉ Daxton Caylor - ComfyUI Node Developer 
 - Discord - daxtoncaylor
 - Email - daxtoncaylor@gmail.com
-- Discord server: https://discord.gg/sf3kVbtJ
+- Discord server: https://discord.gg/Z44Zjpurjp
 - Commission Status:  🟢 **Open** 🟢
 
 # Support ❤️
