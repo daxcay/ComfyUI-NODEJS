@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-nodejs"
+description = "This node allows the execution of Node.js application within ComfyUI by leveraging the ComfyUI-NODEJS, which starts alongside ComfyUI and facilitates the installation of Node.js. The integration enables Python subprocesses to execute Node.js scripts."
+version = "1.0.0"
+license = "LICENSE"
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/daxcay/ComfyUI-NODEJS"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "daxcay"
+DisplayName = "ComfyUI-NODEJS"
+Icon = ""
