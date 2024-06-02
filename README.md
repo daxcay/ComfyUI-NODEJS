@@ -82,9 +82,13 @@ Ensure your project package.json to have a "production" script in scripts object
 
 ![image](https://github.com/daxcay/ComfyUI-NODEJS/assets/164315771/af32aef5-87e6-41f2-b095-6ee8798b0977)
 
-Now run/restart **comfyui**
+Now run/restart **comfyui**. 
 
-**Demo projects are given in nodejs folder in case you don't understand anything.**
+Open any browser and head to ```http://localhost:3000```. If NodeJs is installed successfully it should return:
+
+![image](https://github.com/daxcay/ComfyUI-NODEJS/assets/164315771/480baf8e-6a37-44fe-8e7d-c012dc637fcd)
+
+**Demo projects are given in nodejs folder in case you don't understand anything. delete them when running actual projects or build upon them.**
 
 
 # CREDITS
