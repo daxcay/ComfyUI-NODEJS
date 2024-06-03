@@ -34,7 +34,12 @@ For any query you can join my discord server: https://discord.gg/Z44Zjpurjp
    - Then go inside ComfyUI-NODEJS with cmd or open new and type pip install -r requirements.txt to install the requirements.
 
 4. Using Comfy Manager (https://github.com/ltdrdata/ComfyUI-Manager)
-   - Todo
+   - Inside ComfyUI > Click Manager Button on Side.
+   - Click Install Custom Node and Search for nodejs and Install this node:
+     
+   ![image](https://github.com/daxcay/ComfyUI-NODEJS/assets/164315771/8cb85775-0eb0-4392-b4c3-979785a86a13)
+
+   - Restart ComfyUI and it should be good to go
 
 ## Configuration
 
