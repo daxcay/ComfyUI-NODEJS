@@ -96,7 +96,7 @@ Open any browser and head to ```http://localhost:3000```. If NodeJs is installed
 **Demo projects are given in nodejs folder in case you don't understand anything. delete them when running actual projects or build upon them.**
 
 
-# CREDITS
+# Credits
 
 ◉ Daxton Caylor - ComfyUI Node Developer 
 - Discord - daxtoncaylor
