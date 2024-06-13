@@ -12,4 +12,4 @@ Repository = "https://github.com/daxcay/ComfyUI-NODEJS"
 [tool.comfy]
 PublisherId = "daxcay"
 DisplayName = "ComfyUI-NODEJS"
-Icon = ""
+Icon = "https://raw.githubusercontent.com/daxcay/ComfyUI-NODEJS/main/web/assets/img/logo.jpg"
