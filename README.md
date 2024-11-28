@@ -101,7 +101,7 @@ Open any browser and head to ```http://localhost:3000```. If NodeJs is installed
 ◉ Daxton Caylor - ComfyUI Node Developer 
 - Discord - daxtoncaylor
 - Email - daxtoncaylor@gmail.com
-- Discord server: https://discord.gg/Z44Zjpurjp
+- Discord server: https://discord.gg/UyGkJycvyW
 - Commission Status:  🟢 **Open** 🟢
 
 # Support ❤️
